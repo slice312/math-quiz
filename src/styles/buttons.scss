@@ -1,0 +1,39 @@
+.btn-default {
+    @include font-face(Montserrat, 400, 14px, 14px, black);
+    background: #47CF34;
+    border-radius: 8px;
+
+    &:hover {
+        transition: 0.2s;
+        background-color: #30B01E;
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+
+    &:disabled {
+        pointer-events: none;
+        background-color: gray;
+    }
+}
+
+.btn-secondary {
+    @include font-face(Montserrat, 400, 14px, 14px, black);
+    background: #287EE7;
+    border-radius: 8px;
+
+    &:hover {
+        transition: 0.2s;
+        background-color: #4B9AFB;
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+
+    &:disabled {
+        pointer-events: none;
+        background-color: gray;
+    }
+}
