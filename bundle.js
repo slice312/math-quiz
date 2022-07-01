@@ -682,9 +682,18 @@ const urlLocationHandler = async () => {
     if (!location.length) {
         location = "/";
     }
+    let dh = urlRoutes
 
-    const publicIUrl = process.env.PUBLIC_URL || "";
-    location = location.replace(publicIUrl, "");
+    const d = process?.env?.PUBLIC_URL
+    // const paths = location.split("/")
+    //     .filter(x => x)
+    //
+    // if (paths.length)
+    //     location = paths[0];
+    // else
+    //     location = "/";
+    console.log(process.env)
+
     const route = urlRoutes[location];
     const html = await fetch(route.template)
         .then(response => response.text());
@@ -867,7 +876,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/index.scss */ "./src/styles/index.scss");
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./routes */ "./src/routes.js");
 /* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app */ "./src/app/index.js");
-
 
 
 
