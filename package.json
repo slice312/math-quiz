@@ -4,8 +4,10 @@
   "description": "game",
   "main": "src/index.js",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.js --mode=development --open",
-    "build": "webpack --config webpack.config.js --mode=development"
+    "start": "webpack-dev-server --config webpack.config.js --mode=production --open",
+    "build": "webpack --config webpack.config.js --mode=development",
+    "build-prod": "webpack --config webpack.config.js --mode=production",
+    "deploy": "npm run build-prod && gh-pages -d build"
   },
   "keywords": [
     "vanilla"
@@ -15,6 +17,7 @@
   "devDependencies": {
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
+    "dotenv-webpack": "^7.1.1",
     "gh-pages": "^4.0.0",
     "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",

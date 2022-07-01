@@ -1,5 +1,5 @@
 .btn-default {
-    @include font-face(Montserrat, 400, 14px, 14px, black);
+    @include font-face(Montserrat, 400, 14px, 14px, white);
     background: #47CF34;
     border-radius: 8px;
 
@@ -16,8 +16,11 @@
         pointer-events: none;
         background-color: gray;
     }
+
 }
 
+
+// TODO: зачем
 .btn-secondary {
     @include font-face(Montserrat, 400, 14px, 14px, black);
     background: #287EE7;

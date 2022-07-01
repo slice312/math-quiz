@@ -1,11 +1,10 @@
 <main class="main-menu">
-    <form class="main-menu__form" id="main-menu">
+    <form class="main-menu__form" id="main-menu" onsubmit="" novalidate>
         <label for="modal-order-input-name">
             Hello Gamer! <br>
             Tell us your name?
         </label>
         <input id="modal-order-input-name" name="name" type="text" placeholder="name">
-
         <p class="main-menu__mode-label">
         </p>
         <fieldset>
@@ -14,13 +13,13 @@
             </legend>
             <div>
                 <label>
-                    ${this.#modes[0]}
+                    Practice
                     <input type="radio" name="gameMode" value="practice">
                 </label>
             </div>
             <div>
                 <label>
-                    ${this.#modes[1]}
+                    Time Attack
                     <input type="radio" name="gameMode" value="game">
                 </label>
             </div>
@@ -28,19 +27,20 @@
 
         <ul class="main-menu__button-list">
             <li class="main-menu__button-item">
-                ${new Button({name: "play"}).render()}
+                <button class="btn-default" id="main-menu-btn-play" type="button">
+                    Play
+                </button>
             </li>
             <li class="main-menu__button-item">
-                ${new Button({name: "sets"}).render()}
+                <button class="btn-default" type="button">
+                    Leaderboard
+                </button>
             </li>
             <li class="main-menu__button-item">
-                ${Renderer.render(Button)}
-                ${new Button({name: "faq"}).render()}
+                <button class="btn-default" type="button">
+                    Help
+                </button>
             </li>
         </ul>
     </form>
-
-    <div class="game-screen" id="game-screen">
-
-    </div>
 </main>
