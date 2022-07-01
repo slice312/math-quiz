@@ -643,6 +643,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 const urlRoutes = {
     "404": {
         template: "./templates/404.html",
@@ -661,7 +662,6 @@ const urlRoutes = {
         title: "",
         description: ""
     },
-
     "/game": {
         template: "./templates/game.html",
         title: "",
@@ -683,6 +683,8 @@ const urlLocationHandler = async () => {
         location = "/";
     }
 
+    const publicIUrl = process.env.PUBLIC_URL || "";
+    location = location.replace(publicIUrl, "");
     const route = urlRoutes[location];
     const html = await fetch(route.template)
         .then(response => response.text());
