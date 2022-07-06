@@ -17907,22 +17907,18 @@ const urlRoute = (event) => {
 
 
 const urlLocationHandler = async () => {
-    let location = window.location.pathname;
-    if (!location.length) {
-        location = "/";
-    }
+    let path = window.location.pathname;
     console.log("VOT SULA", "zeon-module-2_MathQuiz")
 
 
     debugger
 
-    if (location.indexOf("/" + "zeon-module-2_MathQuiz") >= 0) {
-        let str = location.replace("/" + "zeon-module-2_MathQuiz", "");
-        location  = str;
+    if (path.indexOf("/" + "zeon-module-2_MathQuiz") >= 0) {
+        path = path.replace("/" + "zeon-module-2_MathQuiz", "");
     }
 
 
-    const route = urlRoutes[location];
+    const route = urlRoutes[path];
     const html = await fetch(route.template)
         .then(response => response.text());
     const mainDiv = document.getElementById("root");
