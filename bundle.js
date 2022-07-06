@@ -17847,7 +17847,7 @@ __webpack_require__.r(__webpack_exports__);
 const renderMainMenu = () => {
     const btnPlay = document.getElementById("main-menu-btn-play");
     btnPlay.onclick = () => {
-        (0,_src_routes__WEBPACK_IMPORTED_MODULE_0__.navigate)("/about")
+        (0,_src_routes__WEBPACK_IMPORTED_MODULE_0__.navigate)("./about")
     };
 };
 
