@@ -599,30 +599,51 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "renderMainMenu": () => (/* binding */ renderMainMenu)
 /* harmony export */ });
-/* harmony import */ var _src_routes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../src/routes */ "./src/routes.js");
-
 
 
 const renderMainMenu = () => {
-    // const btnPlay = document.getElementById("main-menu-btn-play");
-    // btnPlay.onclick = () => {
-    //     AppRouter.navigate("./about");
-    // };
+
 };
 
 /***/ }),
 
-/***/ "./src/routes.js":
-/*!***********************!*\
-  !*** ./src/routes.js ***!
-  \***********************/
+/***/ "./src/shared/routing/app-link-tag.js":
+/*!********************************************!*\
+  !*** ./src/shared/routing/app-link-tag.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "AppLink": () => (/* binding */ AppLink)
+/* harmony export */ });
+/* harmony import */ var _src_shared_routing_app_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../src/shared/routing/app-router */ "./src/shared/routing/app-router.js");
+
+
+
+class AppLink extends HTMLElement {
+    connectedCallback() {
+        this.onclick= () => {
+            const link = this.getAttribute("href");
+            _src_shared_routing_app_router__WEBPACK_IMPORTED_MODULE_0__.AppRouter.navigate(link);
+        }
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/shared/routing/app-router.js":
+/*!******************************************!*\
+  !*** ./src/shared/routing/app-router.js ***!
+  \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppRouter": () => (/* binding */ AppRouter)
 /* harmony export */ });
-/* harmony import */ var _src_shared_router_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../src/shared/router/router */ "./src/shared/router/router.js");
+/* harmony import */ var _src_shared_routing_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../src/shared/routing/router */ "./src/shared/routing/router.js");
 /* harmony import */ var _src_js_templates_main_menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../src/js/templates/main-menu */ "./src/js/templates/main-menu.js");
 /* harmony import */ var _src_js_templates_about__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../src/js/templates/about */ "./src/js/templates/about.js");
 
@@ -665,31 +686,38 @@ const urlRoutes = {
 
 
 
-
-
-const router = new _src_shared_router_router__WEBPACK_IMPORTED_MODULE_0__.Router(urlRoutes);
-const AppRouter = router;
-
-
-class AppLink extends HTMLElement {
-    connectedCallback() {
-        this.onclick= () => {
-            const link = this.getAttribute("href");
-            AppRouter.navigate(link);
-        }
-
-    }
-}
-
-customElements.define("app-link", AppLink);
+const AppRouter = new _src_shared_routing_router__WEBPACK_IMPORTED_MODULE_0__.Router(urlRoutes);;
 
 
 /***/ }),
 
-/***/ "./src/shared/router/router.js":
+/***/ "./src/shared/routing/index.js":
 /*!*************************************!*\
-  !*** ./src/shared/router/router.js ***!
+  !*** ./src/shared/routing/index.js ***!
   \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "configureRouting": () => (/* binding */ configureRouting)
+/* harmony export */ });
+/* harmony import */ var _app_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app-router */ "./src/shared/routing/app-router.js");
+/* harmony import */ var _app_link_tag__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app-link-tag */ "./src/shared/routing/app-link-tag.js");
+
+
+
+
+const configureRouting = () => {
+    _app_router__WEBPACK_IMPORTED_MODULE_0__.AppRouter.init();
+    window.customElements.define("app-link", _app_link_tag__WEBPACK_IMPORTED_MODULE_1__.AppLink);
+};
+
+/***/ }),
+
+/***/ "./src/shared/routing/router.js":
+/*!**************************************!*\
+  !*** ./src/shared/routing/router.js ***!
+  \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -936,13 +964,16 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/index.scss */ "./src/styles/index.scss");
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./routes */ "./src/routes.js");
+/* harmony import */ var _shared_routing__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./shared/routing */ "./src/shared/routing/index.js");
+
 
 
 
 console.log("PAGE UPDATED");
+
+
 const app = () => {
-    _routes__WEBPACK_IMPORTED_MODULE_1__.AppRouter.init();
+    (0,_shared_routing__WEBPACK_IMPORTED_MODULE_1__.configureRouting)()
 };
 
 
