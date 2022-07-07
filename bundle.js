@@ -767,7 +767,6 @@ class Router {
         return path;
     }
 
-
     /**
      * @param {Node} node
      */
@@ -778,7 +777,6 @@ class Router {
     };
 
     navigate(path) {
-        console.log("Router.navigate");
         window.history.pushState({}, "", path);
         void this.#urlLocationHandler();
     }
