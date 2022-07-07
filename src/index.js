@@ -1,6 +1,14 @@
 import "./styles/index.scss";
-import r from "./routes";
-import {app} from "./app";
 
-document.addEventListener("DOMContentLoaded", console.log);
+import {configureRouting} from "./shared/routing";
+
+console.log("PAGE UPDATED");
+
+
+const app = () => {
+    configureRouting()
+};
+
+
+document.addEventListener("DOMContentLoaded", app);
 

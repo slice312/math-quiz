@@ -22,7 +22,16 @@
     }
 
     &__button-item {
+        //TODO: удалить
         button {
+            width: 150px;
+            height: 49px;
+        }
+
+        .alo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             width: 150px;
             height: 49px;
         }

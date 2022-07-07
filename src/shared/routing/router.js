@@ -1,31 +1,40 @@
-class Router {
-    #urlRoutes
+/**
+ * @typedef  UrlRouteInfo
+ * @property {string} template
+ * @property {function|null} render
+ * @property {string} title
+ * @property {string} description
+ */
 
+
+export class Router {
+    #urlRoutes;
+
+    /**
+     * @param {Object<string, UrlRouteInfo>} urlRoutes
+     */
     constructor(urlRoutes) {
         this.#urlRoutes = urlRoutes;
     }
 
     init() {
-        window.onpopstate.a = urlRoute;
-
-// // Listen on hash change:
-        window.addEventListener("hashchange", urlRoute);
-// Listen on page load:
-        window.addEventListener("load", urlRoute);
-
+        const routeHandle = e => this.#urlRoute(e);
+        window.addEventListener("popstate", routeHandle);
+        window.addEventListener("hashchange", routeHandle);
+        window.addEventListener("load", routeHandle);
     }
 
-    urlRoute (event) {
+    #urlRoute(event) {
         console.log("urlRoute", event);
         event.preventDefault();
         window.history.pushState({}, "", event.target.href);
-        void urlLocationHandler();
+        void this.#urlLocationHandler();
     };
 
 
-    async urlLocationHandler () {
-        const path = getCurrentUrlPath();
-        const route = urlRoutes[path];
+    async #urlLocationHandler() {
+        const path = this.getCurrentUrlPath();
+        const route = this.#urlRoutes[path];
 
         const html = await fetch(route.template)
             .then(response => response.text());
@@ -60,10 +69,6 @@ class Router {
         return path;
     }
 
-    navigate() {
-
-    }
-
     /**
      * @param {Node} node
      */
@@ -71,6 +76,10 @@ class Router {
         while (node.lastChild) {
             node.removeChild(node.lastChild);
         }
-    }
+    };
 
+    navigate(path) {
+        window.history.pushState({}, "", path);
+        void this.#urlLocationHandler();
+    }
 }
