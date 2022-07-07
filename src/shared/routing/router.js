@@ -25,7 +25,6 @@ export class Router {
     }
 
     #urlRoute(event) {
-        console.log("urlRoute", event);
         event.preventDefault();
         window.history.pushState({}, "", event.target.href);
         void this.#urlLocationHandler();
@@ -63,7 +62,7 @@ export class Router {
     getCurrentUrlPath() {
         const path = window.location.pathname;
 
-        if (path.indexOf("/" + process.env?.PUBLIC_URL) >= 0)
+        if (process.env?.PUBLIC_URL && path.indexOf("/" + process.env?.PUBLIC_URL) >= 0)
             return path.replace("/" + process.env.PUBLIC_URL, "");
 
         return path;
