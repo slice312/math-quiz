@@ -12,6 +12,8 @@ module.exports = (env, argv) => {
 };
 
 
+// TODO: common config into webpack-merge
+
 const prodConfig = {
     mode: "production",
     entry: "./src/index.js",
@@ -79,6 +81,11 @@ const prodConfig = {
                 type: "asset/resource"
             }
         ]
+    },
+    performance: {
+        hints: false,
+        maxEntrypointSize: 512000,
+        maxAssetSize: 512000
     }
 };
 
@@ -160,5 +167,10 @@ const devConfig = {
                 type: "asset/resource"
             }
         ]
+    },
+    performance: {
+        hints: false,
+        maxEntrypointSize: 512000,
+        maxAssetSize: 512000
     }
 };
