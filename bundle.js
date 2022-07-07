@@ -622,7 +622,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppRouter": () => (/* binding */ AppRouter)
 /* harmony export */ });
-/* harmony import */ var _src_shared_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../src/shared/router */ "./src/shared/router.js");
+/* harmony import */ var _src_shared_router_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../src/shared/router/router */ "./src/shared/router/router.js");
 /* harmony import */ var _src_js_templates_main_menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../src/js/templates/main-menu */ "./src/js/templates/main-menu.js");
 /* harmony import */ var _src_js_templates_about__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../src/js/templates/about */ "./src/js/templates/about.js");
 
@@ -667,7 +667,7 @@ const urlRoutes = {
 
 
 
-const router = new _src_shared_router__WEBPACK_IMPORTED_MODULE_0__.Router(urlRoutes);
+const router = new _src_shared_router_router__WEBPACK_IMPORTED_MODULE_0__.Router(urlRoutes);
 const AppRouter = router;
 
 
@@ -686,10 +686,10 @@ customElements.define("app-link", AppLink);
 
 /***/ }),
 
-/***/ "./src/shared/router.js":
-/*!******************************!*\
-  !*** ./src/shared/router.js ***!
-  \******************************/
+/***/ "./src/shared/router/router.js":
+/*!*************************************!*\
+  !*** ./src/shared/router/router.js ***!
+  \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -761,8 +761,8 @@ class Router {
     getCurrentUrlPath() {
         const path = window.location.pathname;
 
-        if (path.indexOf("/" + "alo") >= 0)
-            return path.replace("/" + "alo", "");
+        if (path.indexOf("/" + "zeon-module-2_MathQuiz") >= 0)
+            return path.replace("/" + "zeon-module-2_MathQuiz", "");
 
         return path;
     }
