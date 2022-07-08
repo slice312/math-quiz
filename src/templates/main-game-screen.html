@@ -1,1 +1,44 @@
-<h1>Main Game Screen</h1>
+<div class="game-screen">
+    <div class="container game-screen__container">
+
+        <div class="game-screen__head">
+            <div class="game-screen__player">
+                <p>
+                    Player:3 <span id="game-screen-player-name"></span>
+                </p>
+            </div>
+            <div class="timer">
+                <div class="controls">
+                    <p id="duration">
+                    </p>
+                    <div>
+                    </div>
+                </div>
+                <svg id="canvas">
+                    <circle r="48" cx="50" cy="50"/>
+                </svg>
+            </div>
+        </div>
+        <div class="exercise">
+            <div class="exercise__main">
+                <p class="exercise__expression" id="expression">
+
+                </p>
+                <p>=</p>
+                <input class="exercise__answer" type="number">
+            </div>
+            <div class="exercise__score">
+                <p class="exercise__score-label">
+                    Your score:
+                </p>
+                <p class="exercise__score-value" id="exercise-score-value">
+                    26
+                </p>
+                <p class="exercise__score-hint">
+                    Keep going!
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>

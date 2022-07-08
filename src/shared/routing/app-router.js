@@ -1,5 +1,6 @@
 import {Router} from "/src/shared/routing/router";
 import {renderMainMenu} from "/src/js/templates/main-menu"
+import {renderMainGameScreen} from "/src/js/templates/main-game-screen";
 import {renderAboutPage} from "/src/js/templates/about";
 
 
@@ -24,8 +25,8 @@ const urlRoutes = {
     },
     "/main-game-screen": {
         template: "./templates/main-game-screen.html",
-        render: null,
-        title: "",
+        render: renderMainGameScreen,
+        title: "Quiz",
         description: ""
     },
     "/leaderboard": {

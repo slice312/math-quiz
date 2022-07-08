@@ -1,0 +1,99 @@
+
+.game-screen {
+    width: 100%;
+    height: 100vh;
+    background: url("/src/assets/images/menu-bg-forest.png");
+    background-size: cover;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 50px;
+        //background-color: red;
+    }
+
+    &__head {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        background-color: green;
+    }
+
+    &__player {
+        padding: 5px 10px;
+        color: white;
+        border-radius: 4px;
+        background-color: rgba(0, 0, 0, 0.503);
+        border: 3px solid white;
+
+        p {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 20px;
+            text-transform: uppercase;
+
+        }
+
+    }
+}
+
+
+.timer {
+    position: relative;
+    display: inline-block;
+}
+
+#canvas {
+    height: 100px;
+    width: 100px;
+    //border: 1px solid red;
+}
+
+circle {
+    fill: transparent;
+    stroke: rgb(218, 217, 220);
+    stroke-width: 2px;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+#duration {
+    display: block;
+    border: none;
+    width: 40px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.timer button {
+    border: none;
+    background-color: transparent;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.timer button:focus {
+    outline: none;
+}
+
+.timer input:focus {
+    outline: none;
+}
+
+.controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
