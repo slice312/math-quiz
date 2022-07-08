@@ -12,7 +12,7 @@ export const renderMainMenu = () => {
         State.playerName = form.elements.name.value;
         console.log("GLOBAL state", State);
 
-        if (form.checkValidity()) {
+            if (form.checkValidity()) {
             e.preventDefault();
             AppRouter.navigate("main-game-screen");
         }

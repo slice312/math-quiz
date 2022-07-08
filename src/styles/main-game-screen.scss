@@ -63,14 +63,11 @@
     }
 
 
-    &__ex {
+    &__expr-form {
         width: 100%;
-        display: flex;
-        justify-content: space-between;
-
+        overflow: hidden;
         padding: 20px 20px;
         background-color: white;
-
         font-size: 90px;
         color: black;
 
@@ -79,7 +76,14 @@
 
     }
 
-    &__ex-result {
+    &__expr-wrap {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        animation-duration: 800ms;
+    }
+
+    &__expr-result {
         font-size: 80px;
         color: black;
         width: 180px;
@@ -100,10 +104,8 @@
         display: flex;
         align-items: center;
 
-        p {
+        &-label {
             font-size: 45px;
         }
     }
 }
-
-

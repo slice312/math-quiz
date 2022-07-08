@@ -19,20 +19,22 @@
             </div>
         </div>
 
-        <form class="game-screen__ex" id="game-screen-task-form">
-            <span class="game-screen__ex-left" id="firstNumber">0</span>
-            <span class="game-screen__ex-op" id="operator">+</span>
-            <span class="game-screen__ex-right" id="secondNumber">0</span>
-            <span class="game-screen__ex-eq-op">=</span>
-            <label>
-                <input class="game-screen__ex-result" type="number" name="result" autofocus required/>
-            </label>
+        <form class="game-screen__expr-form" id="game-screen-task-form" novalidate>
+            <div class="game-screen__expr-wrap animate animate__fadeInRight" id="game-screen-expr-wrap">
+                <span class="game-screen__expr-left" id="game-screen-ex-left">0</span>
+                <span class="game-screen__expr-op" id="game-screen-ex-op">+</span>
+                <span class="game-screen__expr-right" id="game-screen-ex-right">0</span>
+                <span class="game-screen__expr-eq-op">=</span>
+                <label>
+                    <input class="game-screen__expr-result" type="number" name="result" autofocus required/>
+                </label>
+            </div>
         </form>
 
         <div class="game-screen__score">
-            <div class="score__block">
-                <p>Your score: <span id="sc">0</span></p>
-            </div>
+                <p class="game-screen__score-label">
+                    Your score: <span id="game-screen-score-label">0</span>
+                </p>
         </div>
     </div>
 </div>

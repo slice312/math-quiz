@@ -42,7 +42,7 @@ const commonConfig = {
     module: {
         rules: [
             {
-                test: /\.s[ac]ss$/i,
+                test: /\.(sass|scss|css)$/i,
                 use: [
                     MiniCssExtractPlugin.loader, // TODO: вернуть этот лоадер и убрать style-loader в итоговом билде
                     // "style-loader",
