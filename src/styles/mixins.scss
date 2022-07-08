@@ -6,3 +6,8 @@
     color: $color;
     font-style: normal;
 }
+
+
+@mixin font-default($weight, $size, $lineHeight, $color) {
+    @include font-face("Janda Manatee Solid", $weight, $size, $lineHeight, $color);
+}

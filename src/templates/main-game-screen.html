@@ -1,44 +1,38 @@
 <div class="game-screen">
     <div class="container game-screen__container">
-
         <div class="game-screen__head">
-            <div class="game-screen__player">
-                <p>
-                    Player:3 <span id="game-screen-player-name"></span>
-                </p>
-            </div>
-            <div class="timer">
-                <div class="controls">
-                    <p id="duration">
+            <p class="game-screen__label">
+                Player: <span id="game-screen-player-name"></span>
+            </p>
+            <p class="game-screen__label">
+                Level: <span id="game-screen-level-label">1</span>
+            </p>
+            <div class="game-screen__timer">
+                <div class="game-screen__timer-label-wrap">
+                    <p class="game-screen__timer-label" id="game-screen-timer-label">
+                        00:00
                     </p>
-                    <div>
-                    </div>
                 </div>
-                <svg id="canvas">
-                    <circle r="48" cx="50" cy="50"/>
+                <svg>
+                    <circle id="game-screen-timer-circle" r="40" cx="50" cy="50"/>
                 </svg>
             </div>
         </div>
-        <div class="exercise">
-            <div class="exercise__main">
-                <p class="exercise__expression" id="expression">
 
-                </p>
-                <p>=</p>
-                <input class="exercise__answer" type="number">
-            </div>
-            <div class="exercise__score">
-                <p class="exercise__score-label">
-                    Your score:
-                </p>
-                <p class="exercise__score-value" id="exercise-score-value">
-                    26
-                </p>
-                <p class="exercise__score-hint">
-                    Keep going!
-                </p>
+        <form class="game-screen__ex" id="game-screen-task-form">
+            <span class="game-screen__ex-left" id="firstNumber">0</span>
+            <span class="game-screen__ex-op" id="operator">+</span>
+            <span class="game-screen__ex-right" id="secondNumber">0</span>
+            <span class="game-screen__ex-eq-op">=</span>
+            <label>
+                <input class="game-screen__ex-result" type="number" name="result" autofocus required/>
+            </label>
+        </form>
+
+        <div class="game-screen__score">
+            <div class="score__block">
+                <p>Your score: <span id="sc">0</span></p>
             </div>
         </div>
-
     </div>
 </div>
