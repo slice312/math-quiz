@@ -1,0 +1,83 @@
+<div class="game-screen">
+    <div class="container game-screen__container">
+        <div class="game-screen__head">
+            <p class="game-screen__label">
+                Player: <span id="game-screen-player-name"></span>
+            </p>
+            <p class="game-screen__label">
+                Level: <span id="game-screen-level-label">1</span>
+            </p>
+            <div class="game-screen__timer">
+                <div class="game-screen__timer-label-wrap">
+                    <p class="game-screen__timer-label" id="game-screen-timer-label">
+                        00:00
+                    </p>
+                </div>
+                <svg>
+                    <circle id="game-screen-timer-circle" r="40" cx="50" cy="50"/>
+                </svg>
+            </div>
+        </div>
+
+        <form class="game-screen__expr-form" id="game-screen-task-form" novalidate>
+            <div class="game-screen__expr-wrap animate animate__fadeInRight" id="game-screen-expr-wrap">
+                <span class="game-screen__expr-left" id="game-screen-ex-left">0</span>
+                <span class="game-screen__expr-op" id="game-screen-ex-op">+</span>
+                <span class="game-screen__expr-right" id="game-screen-ex-right">0</span>
+                <span class="game-screen__expr-eq-op">=</span>
+                <label>
+                    <input class="game-screen__expr-result" id="game-screen-result-input"
+                           type="number" name="result" autofocus required
+                    />
+                </label>
+            </div>
+        </form>
+
+        <div class="game-screen__score">
+            <p class="game-screen__score-label">
+                Your score: <span id="game-screen-score-label">0</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal-game-result" id="modal-game-result">
+    <div class="modal-game-result__wrapper">
+        <div class="modal-game-result__container" id="modal-order-container">
+            <img class="modal-game-result__btn-close" id="modal-game-result-btn-close"
+                 src="/src/assets/icons/x-mark.svg" alt="x-mark"
+            >
+            <div class="modal-game-result__content">
+                <h2 class="modal-game-result__title">
+                    Score
+                </h2>
+                <p>Your score:</p>
+                <p id="modal-game-result-score">0</p>
+                <button class="modal-game-result__btn-home" type="button">
+                    Home
+                </button>
+            </div>
+
+            <p>Ты поиграл</p>
+        </div>
+    </div>
+</div>
+<!--<div class="modal" id="modal">-->
+<!--    <div class="modal__container">-->
+<!--        <button class="modal__back" id="back">Home</button>-->
+<!--        <div class="modal__contnet">-->
+<!--            <p>TIME’S UP!</p>-->
+<!--            <p class="user__level">Level <span id="mLevel"> 0 </span></p>-->
+<!--            <p>Your score: <span id="mScore">0</span></p>-->
+<!--            <div>-->
+<!--                <p>Correct: <span id="mCorrect">0</span></p>-->
+<!--                <p>Incorrect: <span id="mIncorrect">0</span></p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="button">-->
+<!--            <button id="Leaderboard">Leaderboard</button>-->
+<!--            <button id="PlayAgain">Play again</button>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
