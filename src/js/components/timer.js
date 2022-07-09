@@ -1,4 +1,3 @@
-
 export class Timer {
     /** @type {function} */
     #onTick;
@@ -9,8 +8,6 @@ export class Timer {
     /** @type {number} */
     #intervalCallbackId
 
-    constructor() {
-    }
 
     set onTick(callback) {
         this.#onTick = callback;

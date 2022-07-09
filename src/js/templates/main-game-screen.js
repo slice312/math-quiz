@@ -1,6 +1,6 @@
 import {State} from "/src/state";
-import {Timer} from "/src/js/components/timer";
 import {Utils} from "/src/utils";
+import {Timer} from "/src/js/components/timer";
 
 
 export const renderMainGameScreen = () => {
@@ -12,6 +12,7 @@ export const renderMainGameScreen = () => {
     const expressionForm = document.getElementById("game-screen-task-form");
     expressionForm.onsubmit = (e) => e.preventDefault();
 
+
     const scoreLabel = document.getElementById("game-screen-score-label");
 
     let score = 0;
@@ -20,46 +21,40 @@ export const renderMainGameScreen = () => {
     loadExpression(expr);
 
 
-    window.addEventListener("keypress", (e) => {
-        if (e.code === "Enter") {
-            if (expressionForm.elements.result.value) {
-                const answer = Number(expressionForm.elements.result.value);
-                if (answer === expr.result) {
-                    // alert("красава");
-                    score += 1;
+    // TODO: на форм сабмит помнетяь
+    expressionForm.onsubmit = (e) => {
+        e.preventDefault();
+        if (expressionForm.elements.result.value) {
+            const answer = Number(expressionForm.elements.result.value);
+            if (answer === expr.result) {
+                // alert("красава");
+                score += 1;
+                State.score = score;
 
-                } else {
-                    // alert("нет");
-                    score = Math.max(score - 1, 0);
-                }
-
-                // expressionForm.classList.remove("animation")
-                // expressionForm.classList.add("animate__fadeInRight")
-                const animatedExprWrap = document.getElementById("game-screen-expr-wrap");
-
-                    animatedExprWrap.classList.add("animate__fadeOutLeft")
-
-
-                window.requestAnimationFrame(() => {
-
-                    // expressionForm.classList.add("animation")
-                    // expressionForm.classList.remove("animation")
-                    animatedExprWrap.classList.remove("animate__fadeOutLeft");
-
-                    expressionForm.elements.result.value = "";
-                    expr = exprGenerator.generateExpression();
-                    loadExpression(expr);
-                });
-
-                // expressionForm.elements.result.value = "";
-                // expr = exprGenerator.generateExpression();
-                // loadExpression(expr);
-                scoreLabel.textContent = score;
+            } else {
+                // alert("нет");
+                score = Math.max(score - 1, 0);
+                State.score = score;
             }
-            console.log(expressionForm.elements.result.value);
-        }
-    });
 
+            const animatedExprWrap = document.getElementById("game-screen-expr-wrap");
+
+            animatedExprWrap.classList.add("animate__fadeOutLeft");
+
+
+            window.requestAnimationFrame(() => {
+
+                animatedExprWrap.classList.remove("animate__fadeOutLeft");
+
+                expressionForm.elements.result.value = "";
+                expr = exprGenerator.generateExpression();
+                loadExpression(expr);
+            });
+
+            scoreLabel.textContent = score;
+        }
+        console.log(expressionForm.elements.result.value);
+    };
 };
 
 
@@ -75,12 +70,12 @@ const loadExpression = (ex) => {
 
 
 class MathExGenerator {
+    operators = ["+", "-", "*"];
     #rightExResult;
 
     constructor() {
     }
 
-    operators = ["+", "-", "*"];
 
     generateExpression() {
         const num1 = this.getRandom(1, 10);

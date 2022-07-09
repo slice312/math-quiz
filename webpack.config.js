@@ -12,15 +12,7 @@ const commonConfig = {
     output: {
         filename: "bundle.js",
         path: path.resolve(__dirname, "./build"),
-        clean: true,
-        assetModuleFilename: (pathData) => {
-            const filepath = path
-                .dirname(pathData.filename)
-                .split("/")
-                .slice(1)
-                .join("/");
-            return `${filepath}/[name][ext][query]`;
-        }
+        clean: true
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -34,7 +26,11 @@ const commonConfig = {
             patterns: [
                 {
                     from: "./src/templates",
-                    to: "./templates"
+                    to: "./src/templates"
+                },
+                {
+                    from: "./src/assets",
+                    to: "./src/assets"
                 }
             ]
         })
@@ -78,8 +74,6 @@ const commonConfig = {
     }
 };
 
-
-// TODO: common config into webpack-merge
 
 
 const prodConfig = {

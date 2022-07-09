@@ -1,7 +1,8 @@
 
 export const State = {
     playerName: "",
-    gameMode: ""
+    gameMode: "",
+    score: 0,
 };
 
 

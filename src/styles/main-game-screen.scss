@@ -91,11 +91,13 @@
         //border-radius: 15px;
         text-align: center;
 
-        &::placeholder {
-            //color: inherit;
-        }
-
     }
+
+    input[type=number]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
 
     &__score {
         width: auto;
@@ -109,3 +111,135 @@
         }
     }
 }
+
+.modal-game-result {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 3000 !important;
+    overflow: auto;
+    visibility: hidden;
+    background: rgba(0, 0, 0, .5);
+
+    &__wrapper {
+        width: 500px;
+        min-height: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__container {
+        position: relative;
+        padding: 100px 25px;
+        border-radius: 4px;
+        color: #000000;
+        background-color: white;
+    }
+
+    &__btn-close {
+        position: absolute;
+        margin: 20px 0 0 20px;
+        left: 0;
+        top: 0;
+        cursor: pointer;
+    }
+
+    &__content {
+        @include font-default(400, 20px, normal, black);
+    }
+
+    &__title {
+        font-size: 50px;
+    }
+
+    // TODO: в общие стили
+    &__btn-home {
+        background-color: #FFA31A;
+        color: #1B1B1B;
+        padding: 5px;
+        border-radius: 3px;
+    }
+}
+
+//.modal {
+//    position: fixed;
+//    top: 0;
+//    right: 0;
+//    left: 0;
+//    bottom: 0;
+//    display: flex;
+//    align-items: center;
+//    justify-content: center;
+//    z-index: 5;
+//    .modal__container {
+//        width: 100%;
+//        height: auto;
+//        padding: 40px 15px;
+//        background-color: rgba(255, 255, 255, 0.7);
+//        position: absolute;
+//        display: flex;
+//        gap: 40px;
+//        flex-direction: column;
+//        align-items: center;
+//        justify-content: center;
+//        .modal__back {
+//            padding: 5px 15px;
+//            font-family: 'Trispace', sans-serif;
+//            font-weight: 600;
+//            font-size: 16px;
+//            color: white;
+//            border-radius: 4px;
+//            background-color: rgba(0, 0, 0, 0.503);
+//            border: 3px solid white;
+//            cursor: pointer;
+//            transition: 0.4s;
+//            &:hover {
+//                background-color: rgba(255, 255, 255, 0.734);
+//                color: rgb(0, 0, 0);
+//                border: 3px solid rgb(0, 0, 0);
+//            }
+//        }
+//        .modal__contnet {
+//            display: flex;
+//            gap: 15px;
+//            flex-direction: column;
+//            align-items: center;
+//            justify-content: center;
+//            p {
+//                font-family: 'Trispace', sans-serif;
+//                font-weight: 600;
+//                font-size: 16px;
+//            }
+//            div {
+//                display: flex;
+//                gap: 15px;
+//            } }
+//        .button {
+//            display: flex;
+//            gap: 15px;
+//            button {
+//                padding: 5px 15px;
+//                font-family: 'Trispace', sans-serif;
+//                font-weight: 600;
+//                font-size: 16px;
+//                color: white;
+//                border-radius: 4px;
+//                background-color: rgba(0, 0, 0, 0.503);
+//                border: 3px solid white;
+//                cursor: pointer;
+//                transition: 0.4s;
+//                &:hover {
+//                    background-color: rgba(255, 255, 255, 0.734);
+//                    color: rgb(0, 0, 0);
+//                    border: 3px solid rgb(0, 0, 0);
+//                }
+//            }
+//        }
+//
+//
+//    }
+//}
