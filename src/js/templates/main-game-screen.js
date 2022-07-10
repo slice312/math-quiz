@@ -7,14 +7,14 @@ import {AppRouter} from "../../shared/routing/app-router";
 export const renderMainGameScreen = () => {
     const playerLabel = document.getElementById("game-screen-player-name");
     playerLabel.textContent = State.playerName;
-    initTimer(15);
+    initTimer(115);
 
 
     const expressionForm = document.getElementById("game-screen-task-form");
     expressionForm.onsubmit = (e) => e.preventDefault();
 
 
-    const scoreLabel = document.getElementById("game-screen-score-label");
+    const scoreLabel = document.getElementById("game-screen-score-value");
 
     const exprGenerator = new MathExGenerator();
     let expr = exprGenerator.generateExpression();
@@ -33,12 +33,30 @@ export const renderMainGameScreen = () => {
                 // alert("красава");
                 State.score += 1;
                 State.correctCount += 1;
+                const ele = document.getElementById("game-screen-score-label-plus");
+                ele.classList.add("label_lift-up");
+                ele.onanimationend = () => {
+                    console.log("suka");
+                    ele.classList.remove("label_lift-up");
+                }
 
             } else {
-                // alert("нет");
                 State.score = Math.max( State.score - 1, 0);
                 State.incorrectCount += 1;
 
+                const ele = document.getElementById("game-screen-score-label-minus");
+                ele.classList.add("label_lift-up");
+                ele.onanimationend = () => {
+                    console.log("suka");
+                    ele.classList.remove("label_lift-up");
+                }
+
+                const ele2 = document.getElementById("game-screen-score-label");
+                ele2.classList.add("animate__shakeX");
+                ele2.onanimationend = () => {
+                    console.log("suka");
+                    ele2.classList.remove("animate__shakeX");
+                }
             }
 
             const animatedExprWrap = document.getElementById("game-screen-expr-wrap");
