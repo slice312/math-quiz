@@ -1,12 +1,13 @@
 import {State} from "/src/state";
 import {Utils} from "/src/utils";
 import {Timer} from "/src/js/components/timer";
+import {AppRouter} from "../../shared/routing/app-router";
 
 
 export const renderMainGameScreen = () => {
     const playerLabel = document.getElementById("game-screen-player-name");
     playerLabel.textContent = State.playerName;
-    initTimer(121);
+    initTimer(15);
 
 
     const expressionForm = document.getElementById("game-screen-task-form");
@@ -15,11 +16,13 @@ export const renderMainGameScreen = () => {
 
     const scoreLabel = document.getElementById("game-screen-score-label");
 
-    let score = 0;
     const exprGenerator = new MathExGenerator();
     let expr = exprGenerator.generateExpression();
     loadExpression(expr);
 
+    State.score = 0;
+    State.correctCount = 0;
+    State.incorrectCount = 0;
 
     // TODO: на форм сабмит помнетяь
     expressionForm.onsubmit = (e) => {
@@ -28,13 +31,14 @@ export const renderMainGameScreen = () => {
             const answer = Number(expressionForm.elements.result.value);
             if (answer === expr.result) {
                 // alert("красава");
-                score += 1;
-                State.score = score;
+                State.score += 1;
+                State.correctCount += 1;
 
             } else {
                 // alert("нет");
-                score = Math.max(score - 1, 0);
-                State.score = score;
+                State.score = Math.max( State.score - 1, 0);
+                State.incorrectCount += 1;
+
             }
 
             const animatedExprWrap = document.getElementById("game-screen-expr-wrap");
@@ -51,7 +55,7 @@ export const renderMainGameScreen = () => {
                 loadExpression(expr);
             });
 
-            scoreLabel.textContent = score;
+            scoreLabel.textContent = State.score;
         }
         console.log(expressionForm.elements.result.value);
     };
@@ -123,11 +127,48 @@ const initTimer = (countdownSeconds) => {
 
     timer.onComplete = () => {
         console.log("time over");
+        openResultModal();
     };
+
 
     timer.start(countdownSeconds);
 };
 
 
+const openResultModal = () => {
+    const modal = document.getElementById("modal-game-result");
+    const content = document.getElementById("modal-order-container");
+    modal.style.display = "block";
+    setResultModalValues();
 
+    const agaon = document.getElementById("btn-play-again");
+    agaon.onclick = () => {
+        content.classList.add("animate__zoomOut");
+        content.onanimationstart = () => {
+            modal.style.background = "transparent";
+        };
+
+        content.onanimationend = () => {
+            modal.style.display = "none";
+            content.classList.remove("animate__zoomOut");
+            AppRouter.navigate("./main-game-screen");
+        };
+    };
+};
+
+
+const setResultModalValues = () => {
+    const outputElements = {
+        level: document.getElementById("modal-game-result-level"),
+        score: document.getElementById("modal-game-result-score"),
+        correct: document.getElementById("modal-game-result-correct-count"),
+        incorrect: document.getElementById("modal-game-result-incorrect-count")
+    };
+
+    // debugger
+    outputElements.level.textContent = String(State.level);
+    outputElements.score.textContent = String(State.score);
+    outputElements.correct.textContent = String(State.correctCount);
+    outputElements.incorrect.textContent = String(State.incorrectCount);
+};
 

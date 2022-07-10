@@ -20,7 +20,7 @@ const commonConfig = {
             inject: "body"
         }),
         new MiniCssExtractPlugin({
-            filename: "index.[contenthash].css"
+            filename: "index.css" // TODO: для дев сервера кеш здесь не рабтает
         }),
         new CopyPlugin({
             patterns: [

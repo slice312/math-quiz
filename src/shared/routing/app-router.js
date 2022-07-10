@@ -39,4 +39,4 @@ const urlRoutes = {
 
 
 
-export const AppRouter = new Router(urlRoutes);;
+export const AppRouter = new Router(urlRoutes);
