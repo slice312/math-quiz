@@ -44,40 +44,37 @@
 
 <div class="modal-game-result" id="modal-game-result">
     <div class="modal-game-result__wrapper">
-        <div class="modal-game-result__container" id="modal-order-container">
-            <img class="modal-game-result__btn-close" id="modal-game-result-btn-close"
-                 src="/src/assets/icons/x-mark.svg" alt="x-mark"
-            >
-            <div class="modal-game-result__content">
+        <div class="modal-game-result__container animate animate__zoomIn" id="modal-order-container">
+            <form class="modal-game-result__content">
                 <h2 class="modal-game-result__title">
-                    Score
+                    Game Over!
                 </h2>
-                <p>Your score:</p>
-                <p id="modal-game-result-score">0</p>
-                <button class="modal-game-result__btn-home" type="button">
-                    Home
-                </button>
-            </div>
+                <p class="modal-game-result__level-label">
+                    Level: <span id="modal-game-result-level">1</span>
+                </p>
+                <p class="modal-game-result__score-label">Your score:</p>
+                <p class="modal-game-result__score-value" id="modal-game-result-score">
+                    0
+                </p>
+                <p class="modal-game-result__correct-count">
+                    Correct: <span id="modal-game-result-correct-count">0</span>&nbsp;
+                    Incorrect: <span id="modal-game-result-incorrect-count">0</span>
+                </p>
 
-            <p>Ты поиграл</p>
+                <div class="modal-game-result__buttons">
+                    <div>
+                        <app-link class="btn-default" href="./">
+                            Home
+                        </app-link>
+                        <app-link class="btn-default" href="./leaderboard">
+                            Leaderboard
+                        </app-link>
+                    </div>
+                    <button class="btn-default" id="btn-play-again">
+                        Play again
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
-<!--<div class="modal" id="modal">-->
-<!--    <div class="modal__container">-->
-<!--        <button class="modal__back" id="back">Home</button>-->
-<!--        <div class="modal__contnet">-->
-<!--            <p>TIME’S UP!</p>-->
-<!--            <p class="user__level">Level <span id="mLevel"> 0 </span></p>-->
-<!--            <p>Your score: <span id="mScore">0</span></p>-->
-<!--            <div>-->
-<!--                <p>Correct: <span id="mCorrect">0</span></p>-->
-<!--                <p>Incorrect: <span id="mIncorrect">0</span></p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="button">-->
-<!--            <button id="Leaderboard">Leaderboard</button>-->
-<!--            <button id="PlayAgain">Play again</button>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
