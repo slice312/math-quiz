@@ -6,31 +6,31 @@ import {renderAboutPage} from "/src/js/templates/about";
 
 const urlRoutes = {
     "404": {
-        template: "/src/templates/404.html",
+        template: "./src/templates/404.html",
         render: null,
         title: "",
         description: ""
     },
     "/": {
-        template: "/src/templates/main-menu.html",
+        template: "./src/templates/main-menu.html",
         render: renderMainMenu,
         title: "",
         description: ""
     },
     "/about": {
-        template: "/src/templates/about.html",
+        template: "./src/templates/about.html",
         render: renderAboutPage,
         title: "",
         description: ""
     },
     "/main-game-screen": {
-        template: "/src/templates/main-game-screen.html",
+        template: "./src/templates/main-game-screen.html",
         render: renderMainGameScreen,
         title: "Quiz",
         description: ""
     },
     "/leaderboard": {
-        template: "/src/templates/leaderboard.html",
+        template: "./src/templates/leaderboard.html",
         render: null,
         title: "Leaderboard",
         description: ""

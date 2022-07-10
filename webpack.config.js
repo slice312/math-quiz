@@ -10,7 +10,7 @@ const {merge} = require('webpack-merge');
 const commonConfig = {
     entry: "./src/index.js",
     output: {
-        filename: "bundle.js",
+        filename: "bundle.[contenthash].js",
         path: path.resolve(__dirname, "./build"),
         clean: true
     },
@@ -20,7 +20,7 @@ const commonConfig = {
             inject: "body"
         }),
         new MiniCssExtractPlugin({
-            filename: "index.css"
+            filename: "index.[contenthash].css"
         }),
         new CopyPlugin({
             patterns: [
