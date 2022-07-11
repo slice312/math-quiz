@@ -9,9 +9,23 @@ const padWithZero = (num, targetLength) => {
 };
 
 
+/**
+ * Возвращает рандомное число в заданном диапазоне.
+ * @param {number} min
+ * @param {number} max
+ * @returns {number}
+ */
+const random = (min, max) => {
+    return Math.round(Math.random() * (max - min) + min);
+};
+
+
 
 export const Utils = {
     String: {
         padWithZero
+    },
+    Number: {
+        random
     }
 }

@@ -4,7 +4,9 @@ export class Timer {
     /** @type {function} */
     #onComplete;
     /** @type {number} */
-    #seconds;
+    #initSeconds;
+    /** @type {number} */
+    #remainingSeconds;
     /** @type {number} */
     #intervalCallbackId
 
@@ -18,7 +20,7 @@ export class Timer {
     }
 
     start(seconds) {
-        this.#seconds = seconds;
+        this.#remainingSeconds = this.#initSeconds = seconds;
         this.#tick();
         this.#intervalCallbackId = setInterval(this.#tick.bind(this), 1000);
     };
@@ -29,11 +31,11 @@ export class Timer {
     }
 
     #tick() {
-        if (this.#seconds <= 0) {
+        if (this.#remainingSeconds <= 0) {
             this.stop();
         } else {
-            this.#seconds -= 1;
-            this.#onTick?.(this.#seconds);
+            this.#remainingSeconds -= 1;
+            this.#onTick?.(this.#remainingSeconds, this.#initSeconds);
         }
     };
 }

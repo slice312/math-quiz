@@ -32,6 +32,7 @@ export class Router {
 
 
     async #urlLocationHandler() {
+        console.log("URL Handler");
         const path = this.getCurrentUrlPath();
         const route = this.#urlRoutes[path];
 

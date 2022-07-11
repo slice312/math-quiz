@@ -1,7 +1,7 @@
 import {Router} from "/src/shared/routing/router";
-import {renderMainMenu} from "/src/js/templates/main-menu"
-import {renderMainGameScreen} from "/src/js/templates/main-game-screen";
-import {renderAboutPage} from "/src/js/templates/about";
+import {renderMainMenu} from "/src/components/templates/main-menu"
+import {renderMainGameScreen} from "/src/components/templates/main-game-screen";
+import {renderAboutPage} from "/src/components/templates/about";
 
 
 const urlRoutes = {

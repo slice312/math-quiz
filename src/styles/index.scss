@@ -4,13 +4,11 @@
 @import "./animations";
 @import "./mixins";
 @import "./buttons";
-@import "./main-menu";
-@import "./main-game-screen";
+
+@import "/src/components";
 @import "./leaderboard";
 
 
-* {
-}
 
 .container {
     max-width: 800px;
