@@ -2,6 +2,7 @@ import {Router} from "/src/shared/routing/router";
 import {renderMainMenu} from "/src/components/templates/main-menu"
 import {renderMainGameScreen} from "/src/components/templates/main-game-screen";
 import {renderAboutPage} from "/src/components/templates/about";
+import {renderLeaderboardScreen} from "/src/components/templates/leaderboard";
 
 
 const urlRoutes = {
@@ -31,7 +32,7 @@ const urlRoutes = {
     },
     "/leaderboard": {
         template: "./src/templates/leaderboard.html",
-        render: null,
+        render: renderLeaderboardScreen,
         title: "Leaderboard",
         description: ""
     }

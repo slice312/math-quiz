@@ -2,7 +2,7 @@ import {State} from "/src/state";
 import {Utils} from "/src/utils";
 import {Timer} from "/src/shared/lib/timer";
 import {MathExGenerator} from "/src/shared/lib/math-ex-generator";
-import {Api} from "/src/api";
+import {Api} from "/src/shared/api";
 import {ModalResult} from "./modal-result";
 
 
@@ -179,6 +179,7 @@ const saveGameResults = async () => {
     const response = await Api.sendGameResult({
         name: State.playerName,
         mode: State.gameMode,
-        score: State.score
+        level: State.level,
+        score: State.score,
     });
 };

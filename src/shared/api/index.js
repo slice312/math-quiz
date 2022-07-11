@@ -7,6 +7,7 @@ const LEADERBOARD_LS_KEY = "leaderboard";
  * @typedef GameResult
  * @property {string} name
  * @property {string} mode
+ * @property {number} level
  * @property {number} score
  */
 
@@ -21,7 +22,6 @@ const sendGameResult = async (gameResult) => {
     updateLeaderboard(leaderboard, gameResult);
     window.localStorage.setItem(LEADERBOARD_LS_KEY, JSON.stringify(leaderboard));
 };
-
 
 /**
  * @param {object|null} leaderboard
