@@ -1,14 +1,17 @@
 import {State} from "/src/state";
 import {Utils} from "/src/utils";
 import {Timer} from "/src/js/components/timer";
-import {AppRouter} from "../../shared/routing/app-router";
+import {AppRouter} from "/src/shared/routing/app-router";
 
 
 export const renderMainGameScreen = () => {
     const playerLabel = document.getElementById("game-screen-player-name");
     playerLabel.textContent = State.playerName;
-    initTimer(115);
+    initTimer(15);
 
+
+    const btnStopGame = document.getElementById("game-screen-btn-stop");
+    btnStopGame.onclick = openResultModal;
 
     const expressionForm = document.getElementById("game-screen-task-form");
     expressionForm.onsubmit = (e) => e.preventDefault();
@@ -169,7 +172,7 @@ const openResultModal = () => {
         content.onanimationend = () => {
             modal.style.display = "none";
             content.classList.remove("animate__zoomOut");
-            AppRouter.navigate("./main-game-screen");
+            AppRouter.navigate("main-game-screen");
         };
     };
 };
