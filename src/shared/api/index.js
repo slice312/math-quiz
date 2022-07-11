@@ -33,6 +33,7 @@ const updateLeaderboard = (leaderboard, gameResult) => {
 
     const existedRec = leaderboard
         .find(x => x.name === gameResult.name && x.mode === gameResult.mode);
+
     if (existedRec)
         existedRec.score = Math.max(existedRec.score, gameResult.score);
     else
