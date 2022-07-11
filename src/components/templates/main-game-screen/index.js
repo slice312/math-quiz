@@ -2,7 +2,9 @@ import {State} from "/src/state";
 import {Utils} from "/src/utils";
 import {Timer} from "/src/shared/lib/timer";
 import {MathExGenerator} from "/src/shared/lib/math-ex-generator";
+import {Api} from "/src/api";
 import {ModalResult} from "./modal-result";
+
 
 
 /** @type {Timer} */
@@ -28,7 +30,9 @@ const renderStaticElements = () => {
     playerLabel.textContent = State.playerName;
 
     const btnStopGame = document.getElementById("game-screen-btn-stop");
-    btnStopGame.onclick = () => _timer.stop();
+    btnStopGame.onclick = () => {
+        _timer.stop();
+    };
 };
 
 /**
@@ -56,7 +60,7 @@ const getTimer = () => {
     };
 
     timer.onComplete = () => {
-        ModalResult.open(() => startGame());
+        stopGame();
     };
 
     return timer;
@@ -80,6 +84,11 @@ const startGame = () => {
             expr = nextExpression();
         }
     };
+};
+
+const stopGame = () => {
+    ModalResult.open(() => startGame());
+    saveGameResults();
 };
 
 const resetState = () => {
@@ -164,4 +173,12 @@ const renderScoreLabel = (withShakeUpdate) => {
 
     const scoreLabel = document.getElementById("game-screen-score-value");
     scoreLabel.textContent = String(State.score);
+};
+
+const saveGameResults = async () => {
+    const response = await Api.sendGameResult({
+        name: State.playerName,
+        mode: State.gameMode,
+        score: State.score
+    });
 };

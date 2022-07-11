@@ -34,7 +34,6 @@ const setResultModalValues = () => {
         incorrect: document.getElementById("modal-game-result-incorrect-count")
     };
 
-    // debugger
     outputElements.level.textContent = String(State.level);
     outputElements.score.textContent = String(State.score);
     outputElements.correct.textContent = String(State.correctCount);

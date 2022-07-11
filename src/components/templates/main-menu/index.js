@@ -1,5 +1,4 @@
 import {State} from "/src/state";
-
 import {AppRouter} from "/src/shared/routing/app-router";
 
 
