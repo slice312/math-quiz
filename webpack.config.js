@@ -1,10 +1,9 @@
 const path = require("path");
+const {merge} = require("webpack-merge");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
-const dotenvPlugin = require('dotenv-webpack');
-
-const {merge} = require('webpack-merge');
+const dotenvPlugin = require("dotenv-webpack");
 
 
 const commonConfig = {
@@ -25,8 +24,9 @@ const commonConfig = {
         new CopyPlugin({
             patterns: [
                 {
-                    from: "./src/templates",
-                    to: "./src/templates"
+                    from: "./src/pages",
+                    to: "./src/pages",
+                    filter: (filepath) => path.extname(filepath) === ".html"
                 },
                 {
                     from: "./src/assets",
@@ -75,7 +75,6 @@ const commonConfig = {
 };
 
 
-
 const prodConfig = {
     mode: "production",
     plugins: [
@@ -84,6 +83,7 @@ const prodConfig = {
         })
     ]
 };
+
 
 const devConfig = {
     mode: "development",
@@ -104,6 +104,7 @@ const devConfig = {
         })
     ],
 };
+
 
 module.exports = (env, argv) => {
     switch (argv.mode) {

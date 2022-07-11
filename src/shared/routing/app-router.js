@@ -5,33 +5,35 @@ import {renderAboutPage} from "/src/components/templates/about";
 import {renderLeaderboardScreen} from "/src/components/templates/leaderboard";
 
 
+// TODO: [How to emulate `history fallback` for SPA on Github Pages](https://stackoverflow.com/questions/36296012/is-there-a-configuration-in-github-pages-that-allows-you-to-redirect-everything)
+
 const urlRoutes = {
     "404": {
-        template: "./src/templates/404.html",
+        template: "./src/templates/404.html", // TODO: invalid
         render: null,
         title: "",
         description: ""
     },
     "/": {
-        template: "./src/templates/main-menu.html",
+        template: "./src/pages/main-menu/index.html",
         render: renderMainMenu,
         title: "",
         description: ""
     },
     "/about": {
-        template: "./src/templates/about.html",
+        template: "./src/page/about/index.html",
         render: renderAboutPage,
         title: "",
         description: ""
     },
     "/main-game-screen": {
-        template: "./src/templates/main-game-screen.html",
+        template: "./src/pages/main-game-screen/index.html",
         render: renderMainGameScreen,
         title: "Quiz",
         description: ""
     },
     "/leaderboard": {
-        template: "./src/templates/leaderboard.html",
+        template: "./src/pages/leaderboard/index.html",
         render: renderLeaderboardScreen,
         title: "Leaderboard",
         description: ""

@@ -1,5 +1,5 @@
 /**
- * @typedef  UrlRouteInfo
+ * @typedef UrlRouteInfo
  * @property {string} template
  * @property {function|null} render
  * @property {string} title
@@ -7,7 +7,7 @@
  */
 
 
-// TODO:  разбить всю папку routing на shared/lib и app/config
+// TODO: разбить всю папку routing на shared/lib и app/config
 export class Router {
     #urlRoutes;
 
