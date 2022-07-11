@@ -1,4 +1,4 @@
-import {State} from "/src/state";
+import {gameSessionModel} from "/src/entities/game-session";
 
 
 const open = (onClickPlayAgain) => {
@@ -34,10 +34,11 @@ const setResultModalValues = () => {
         incorrect: document.getElementById("modal-game-result-incorrect-count")
     };
 
-    outputElements.level.textContent = String(State.level);
-    outputElements.score.textContent = String(State.score);
-    outputElements.correct.textContent = String(State.correctCount);
-    outputElements.incorrect.textContent = String(State.incorrectCount);
+    const {state} = gameSessionModel;
+    outputElements.level.textContent = String(state.level);
+    outputElements.score.textContent = String(state.score);
+    outputElements.correct.textContent = String(state.correctCount);
+    outputElements.incorrect.textContent = String(state.incorrectCount);
 };
 
 export const ModalResult = {

@@ -1,10 +1,9 @@
-import {State} from "/src/state";
+import {gameSessionModel} from "/src/entities/game-session";
 import {Utils} from "/src/utils";
 import {Timer} from "/src/shared/lib/timer";
 import {MathExGenerator} from "/src/shared/lib/math-ex-generator";
 import {Api} from "/src/shared/api";
 import {ModalResult} from "./modal-result";
-
 
 
 /** @type {Timer} */
@@ -27,7 +26,7 @@ export const renderMainGameScreen = () => {
 
 const renderStaticElements = () => {
     const playerLabel = document.getElementById("game-screen-player-name");
-    playerLabel.textContent = State.playerName;
+    playerLabel.textContent = gameSessionModel.state.playerName;
 
     const btnStopGame = document.getElementById("game-screen-btn-stop");
     btnStopGame.onclick = () => {
@@ -92,15 +91,15 @@ const stopGame = () => {
 };
 
 const resetState = () => {
-    State.level = 1;
+    gameSessionModel.state.level = 1;
     const labelLevel = document.getElementById("game-screen-level-label");
-    labelLevel.textContent = String(State.level);
+    labelLevel.textContent = String(gameSessionModel.state.level);
 
-    State.score = 0;
+    gameSessionModel.state.score = 0;
     renderScoreLabel(false);
 
-    State.correctCount = 0;
-    State.incorrectCount = 0;
+    gameSessionModel.state.correctCount = 0;
+    gameSessionModel.state.incorrectCount = 0;
 };
 
 const nextExpression = () => {
@@ -131,8 +130,8 @@ const renderExpression = (expr) => {
 };
 
 const handleTrueAnswer = () => {
-    State.score += 1;
-    State.correctCount += 1;
+    gameSessionModel.state.score += 1;
+    gameSessionModel.state.correctCount += 1;
     const labelPlusPoint = document.getElementById("game-screen-score-label-plus");
 
     labelPlusPoint.classList.add("label_lift-up");
@@ -145,8 +144,8 @@ const handleTrueAnswer = () => {
 };
 
 const handleFalseAnswer = () => {
-    State.score = Math.max( State.score - 1, 0);
-    State.incorrectCount += 1;
+    gameSessionModel.state.score = Math.max(gameSessionModel.state.score - 1, 0);
+    gameSessionModel.state.incorrectCount += 1;
 
     const labelMinusPoint = document.getElementById("game-screen-score-label-minus");
     labelMinusPoint.classList.add("label_lift-up");
@@ -172,14 +171,14 @@ const renderScoreLabel = (withShakeUpdate) => {
     }
 
     const scoreLabel = document.getElementById("game-screen-score-value");
-    scoreLabel.textContent = String(State.score);
+    scoreLabel.textContent = String(gameSessionModel.state.score);
 };
 
 const saveGameResults = async () => {
     const response = await Api.sendGameResult({
-        name: State.playerName,
-        mode: State.gameMode,
-        level: State.level,
-        score: State.score,
+        name: gameSessionModel.state.playerName,
+        mode: gameSessionModel.state.gameMode,
+        level: gameSessionModel.state.level,
+        score: gameSessionModel.state.score,
     });
 };

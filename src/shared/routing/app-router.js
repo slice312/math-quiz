@@ -1,8 +1,8 @@
 import {Router} from "/src/shared/routing/router";
 import {renderMainMenu} from "/src/pages/main-menu"
-import {renderMainGameScreen} from "/src/components/templates/main-game-screen";
-import {renderAboutPage} from "/src/components/templates/about";
-import {renderLeaderboardScreen} from "/src/components/templates/leaderboard";
+import {renderMainGameScreen} from "/src/pages/main-game-screen";
+import {renderAboutPage} from "/src/pages/about";
+import {renderLeaderboardScreen} from "/src/pages/leaderboard";
 
 
 // TODO: [How to emulate `history fallback` for SPA on Github Pages](https://stackoverflow.com/questions/36296012/is-there-a-configuration-in-github-pages-that-allows-you-to-redirect-everything)

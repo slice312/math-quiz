@@ -1,4 +1,4 @@
-import {State} from "/src/state";
+import {gameSessionModel} from "/src/entities/game-session";
 import {AppRouter} from "/src/shared/routing/app-router";
 
 
@@ -7,11 +7,10 @@ export const renderMainMenu = () => {
     const btn = document.getElementById("main-menu-btn-play");
 
     btn.onclick = (e) => {
-        State.gameMode = form.elements.gameMode.value;
-        State.playerName = form.elements.name.value;
-        console.log("GLOBAL state", State);
+        gameSessionModel.state.gameMode = form.elements.gameMode.value;
+        gameSessionModel.state.playerName = form.elements.name.value;
 
-            if (form.checkValidity()) {
+        if (form.checkValidity()) {
             e.preventDefault();
             AppRouter.navigate("main-game-screen");
         }
