@@ -9,6 +9,18 @@ export const renderMainMenu = () => {
 
     const btn = document.getElementById("main-menu-btn-play");
     btn.onclick = onBtnPlayClick;
+
+
+    const btnAbout = document.getElementById("main-menu-btn-about");
+    const modalAbout = document.getElementById("modal-about");
+    btnAbout.onclick = () => {
+        modalAbout.style.display = "block";
+    };
+
+    const btnAboutModalClose = document.getElementById("modal-order-close-btn");
+    btnAboutModalClose.onclick = () => {
+        modalAbout.style.display = "none";
+    };
 };
 
 
