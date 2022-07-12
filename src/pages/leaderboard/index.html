@@ -2,23 +2,35 @@
     <div class="container leaderboard__container">
         <div class="leaderboard__content">
             <h2 class="leaderboard__title">Leaderboard</h2>
-            <form novalidate>
-                <label for="leaderboard-mode-selector">Game Mode: <span></span></label>
-                <select class="leaderboard__mode-selector"id="leaderboard-mode-selector" name="gameMode">
+            <form class="leaderboard-mode__form" novalidate>
+                <label for="leaderboard-mode-selector">
+                    Game Mode:
+                </label>
+                <select class="leaderboard__mode-selector" id="leaderboard-mode-selector" name="gameMode">
                     <option value="timeAttack">Time Attack</option>
                     <option value="practice">Practice</option>
                 </select>
             </form>
-            <div class="leaderboard__table-header">
-                <div class="leaderboard__table-row">
-                    <span>Name</span>
-                    <span>Level</span>
-                    <span>Score</span>
+            <div class="leaderboard__table">
+                <div class="leaderboard__table-header">
+                    <div class="leaderboard__table-row">
+                        <span>Name</span>
+                        <span>Level</span>
+                        <span>Score</span>
+                    </div>
+                </div>
+                <hr>
+                <div class="leaderboard__table-content" id="leaderboard-table">
+                    <!-- Контент динамически заполняется из js -->
                 </div>
             </div>
-            <hr>
-            <div class="leaderboard__table" id="leaderboard-table">
-
+            <div class="leaderboard__buttons">
+                <app-link class="btn-default" href="./">
+                    Home
+                </app-link>
+                <app-link class="btn-default" href="./main-game-screen">
+                    Play again
+                </app-link>
             </div>
         </div>
     </div>

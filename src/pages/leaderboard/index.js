@@ -1,11 +1,17 @@
+import {gameSessionModel} from "/src/entities/game-session";
 import {Utils} from "/src/shared/lib/uitls";
-
 
 
 export const renderLeaderboardScreen = () => {
     console.log("renderLeaderboardScreen");
 
     const selector = document.getElementById("leaderboard-mode-selector");
+
+
+    const option = Array.from(selector.options)
+        .find(x => x.value === gameSessionModel.state.gameMode);
+
+    option.selected = true;
 
     selector.onchange = onModeChanged;
     onModeChanged();

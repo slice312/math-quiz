@@ -13,6 +13,7 @@ export const setMockerFunction = () => {
     };
 
 
+    // для отладки
     window.App.gameSession = gameSessionModel.state;
 };
 
