@@ -4,14 +4,17 @@ import {Utils} from "/src/shared/lib/uitls";
 
 export const renderLeaderboardScreen = () => {
     hidePlayButton();
+    setGameModeSelector();
+    onModeChanged();
+};
+
+const setGameModeSelector = () => {
     const selector = document.getElementById("leaderboard-mode-selector");
 
     const option = Array.from(selector.options)
         .find(x => x.value === gameSessionModel.state.gameMode);
     option.selected = true;
-
     selector.onchange = onModeChanged;
-    onModeChanged();
 };
 
 const hidePlayButton = () => {
