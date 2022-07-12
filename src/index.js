@@ -1,15 +1,5 @@
-import "./styles/index.scss";
-
-import {configureRouting} from "./shared/routing";
+import {app} from './app';
 
 
 console.log("PAGE LOADING");
-
-const app = () => {
-    configureRouting()
-};
-
-
-
 document.addEventListener("DOMContentLoaded", app);
-

@@ -41,6 +41,7 @@ const setResultModalValues = () => {
     outputElements.incorrect.textContent = String(state.incorrectCount);
 };
 
+
 export const ModalResult = {
     open
 };

@@ -1,9 +1,9 @@
 import {gameSessionModel} from "/src/entities/game-session";
-import {Utils} from "/src/utils";
+import {Utils} from "/src/shared/lib/uitls";
 import {Timer} from "/src/shared/lib/timer";
 import {MathExGenerator} from "/src/shared/lib/math-ex-generator";
 import {Api} from "/src/shared/api";
-import {ModalResult} from "./modal-result";
+import {ModalResult} from "/src/features/modal-result";
 
 
 /** @type {Timer} */
