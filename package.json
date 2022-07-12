@@ -1,7 +1,7 @@
 {
-  "name": "zeon_module-2_mathquiz",
+  "name": "zeon_module-2_math-quiz",
   "version": "1.0.0",
-  "description": "game",
+  "description": "math quiz",
   "main": "src/index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.js --mode=development --open",
@@ -11,7 +11,7 @@
     "lint": "eslint . --ext .js"
   },
   "keywords": [
-    "vanilla"
+    "vanilla", "spa", "feature-sliced design"
   ],
   "author": "slice312",
   "license": "MIT",
@@ -22,7 +22,6 @@
     "eslint": "^8.19.0",
     "eslint-plugin-import": "^2.26.0",
     "gh-pages": "^4.0.0",
-    "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.0",
     "postcss": "^8.4.14",
@@ -37,10 +36,6 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
-    "animate.css": "^4.1.1",
-    "dayjs": "^1.11.3",
-    "lodash": "^4.17.21",
-    "ramda": "^0.28.0",
-    "rxjs": "^7.5.5"
+    "dayjs": "^1.11.3"
   }
 }

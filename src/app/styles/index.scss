@@ -6,55 +6,12 @@
 @import "./buttons";
 @import "./radio-buttons.css";
 
-
-
 @import "/src/pages";
 @import "/src/features/modal-result";
 @import "/src/features/modal-about";
-
 
 
 .container {
     max-width: 800px;
     margin: 0 auto;
 }
-
-
-header {
-    height: 150px;
-}
-
-
-.root-menu {
-    width: 100vw;
-    //height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background-color: rebeccapurple;
-
-    .root-menu__form {
-        width: 300px;
-        height: 500px;
-        background-color: #96DDE8;
-
-    }
-
-    .root-menu__list {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .root-menu__button-item {
-        button {
-            width: 183px;
-            height: 50px;
-        }
-    }
-}
-
-
-

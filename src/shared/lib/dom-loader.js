@@ -26,6 +26,7 @@ const setElement = (node) => {
     appContainer.appendChild(node);
 };
 
+
 export const DomLoader = {
     renderElement,
     addElement,
