@@ -1,7 +1,6 @@
 import {Router} from "/src/shared/lib/router";
 import {renderMainMenu} from "/src/pages/main-menu"
 import {renderMainGameScreen} from "/src/pages/main-game-screen";
-import {renderAboutPage} from "/src/pages/about";
 import {renderLeaderboardScreen} from "/src/pages/leaderboard";
 
 
@@ -17,12 +16,6 @@ const urlRoutes = {
     "/": {
         template: "./src/pages/main-menu/index.html",
         render: renderMainMenu,
-        title: "",
-        description: ""
-    },
-    "/about": {
-        template: "./src/page/about/index.html",
-        render: renderAboutPage,
         title: "",
         description: ""
     },

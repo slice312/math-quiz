@@ -1,6 +1,7 @@
 import {PLAYER_LS_KEY} from "/src/shared/constants";
 import {gameSessionModel} from "/src/entities/game-session";
 import {AppRouter} from "/src/pages/app-router";
+import {ModalAbout} from "/src/features/modal-about";
 
 
 export const renderMainMenu = () => {
@@ -10,17 +11,8 @@ export const renderMainMenu = () => {
     const btn = document.getElementById("main-menu-btn-play");
     btn.onclick = onBtnPlayClick;
 
-
     const btnAbout = document.getElementById("main-menu-btn-about");
-    const modalAbout = document.getElementById("modal-about");
-    btnAbout.onclick = () => {
-        modalAbout.style.display = "block";
-    };
-
-    const btnAboutModalClose = document.getElementById("modal-order-close-btn");
-    btnAboutModalClose.onclick = () => {
-        modalAbout.style.display = "none";
-    };
+    btnAbout.onclick = ModalAbout.open;
 };
 
 

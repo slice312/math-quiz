@@ -1,28 +1,17 @@
 import {gameSessionModel} from "/src/entities/game-session";
+import {DomLoader} from "/src/shared/lib/dom-loader";
+import {layout} from "./ui";
 
 
 const open = (onClickPlayAgain) => {
-    const modal = document.getElementById("modal-game-result");
-    const content = document.getElementById("modal-order-container");
-    modal.style.display = "block";
+    render();
     setResultModalValues();
+    setHandlers(onClickPlayAgain);
+};
 
-    const btnPlayAgain = document.getElementById("btn-play-again");
-    btnPlayAgain.onclick = () => {
-        content.classList.add("animate__zoomOut");
-
-        content.onanimationstart = () => {
-            modal.style.background = "transparent";
-        };
-
-        content.onanimationend = () => {
-            modal.style.display = "none";
-            content.classList.remove("animate__zoomOut");
-            content.onanimationend = null;
-        };
-
-        onClickPlayAgain?.();
-    };
+const render = () => {
+    const htmlTemplate = DomLoader.renderElement(layout());
+    DomLoader.addElement(htmlTemplate.body.firstChild);
 };
 
 
@@ -41,6 +30,28 @@ const setResultModalValues = () => {
     outputElements.incorrect.textContent = String(state.incorrectCount);
 };
 
+
+const setHandlers = (onClickPlayAgain) => {
+    const modal = document.getElementById("modal-game-result");
+    const content = document.getElementById("modal-order-container");
+
+    const btnPlayAgain = document.getElementById("btn-play-again");
+    btnPlayAgain.onclick = () => {
+        content.classList.add("animate__zoomOut");
+
+        content.onanimationstart = () => {
+            modal.style.background = "transparent";
+        };
+
+        content.onanimationend = () => {
+            modal.remove();
+            content.classList.remove("animate__zoomOut");
+            content.onanimationend = null;
+        };
+
+        onClickPlayAgain?.();
+    };
+};
 
 export const ModalResult = {
     open

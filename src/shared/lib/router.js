@@ -1,3 +1,6 @@
+import {DomLoader} from "./dom-loader";
+
+
 /**
  * @typedef UrlRouteInfo
  * @property {string} template
@@ -32,23 +35,14 @@ export class Router {
 
 
     async #urlLocationHandler() {
-        console.log("URL Handler");
         const path = this.getCurrentUrlPath();
         const route = this.#urlRoutes[path];
 
         const html = await fetch(route.template)
             .then(response => response.text());
 
-        const domParser = new DOMParser();
-        const htmlDocument = domParser.parseFromString(html, "text/html");
-
-        const appContainer = document.getElementById("root");
-
-        this.#removeChildNodes(appContainer);
-
-        for (const nd of htmlDocument.body.childNodes) {
-            appContainer.appendChild(nd);
-        }
+        const pageTemplateElement = DomLoader.renderElement(html);
+        DomLoader.setElement(pageTemplateElement.body.firstChild)
 
         if (route.render)
             route.render();
@@ -69,14 +63,6 @@ export class Router {
         return path;
     }
 
-    /**
-     * @param {Node} node
-     */
-    #removeChildNodes = (node) => {
-        while (node.lastChild) {
-            node.removeChild(node.lastChild);
-        }
-    };
 
     navigate(path) {
         window.history.pushState({}, "", path);

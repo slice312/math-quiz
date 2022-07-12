@@ -6,7 +6,7 @@
     left: 0;
     z-index: 100;
     overflow: auto;
-    display: none;
+    display: block;
     background: rgba(0, 0, 0, 0.5);
 
     &__wrapper {
