@@ -1,7 +1,6 @@
 import dayjs from "dayjs";
+import {LEADERBOARD_LS_KEY} from "/src/shared/constants";
 
-
-const LEADERBOARD_LS_KEY = "leaderboard";
 
 /**
  * @typedef GameResult

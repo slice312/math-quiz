@@ -1,3 +1,5 @@
+import {LEADERBOARD_LS_KEY} from "/src/shared/constants";
+
 /**
  * Приводит число к строке заполняя leading zeroes под указанную длину.
  * @param {number} num - Число
@@ -20,6 +22,10 @@ const random = (min, max) => {
 };
 
 
+const getLeaderboard = () => {
+    return JSON.parse(window.localStorage.getItem(LEADERBOARD_LS_KEY));
+};
+
 
 export const Utils = {
     String: {
@@ -27,5 +33,6 @@ export const Utils = {
     },
     Number: {
         random
-    }
+    },
+    getLeaderboard
 }

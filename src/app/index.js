@@ -1,14 +1,11 @@
 import "./styles/index.scss";
 import {configureRouting} from "./providers/routing";
+import {setMockerFunction} from "./providers/mock";
 
 
 export const app = () => {
     configureRouting();
+    setMockerFunction();
 };
 
-// import {State} from "../state";
-//
-// if (!State.playerName && window.AppState)
-//     State.playerName = window.AppState.playerName;
-// // для отладки
-// window.AppState = State;
+
