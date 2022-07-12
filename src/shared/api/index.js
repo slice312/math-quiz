@@ -13,13 +13,14 @@ import {LEADERBOARD_LS_KEY} from "/src/shared/constants";
 
 /**
  * @param {GameResult} gameResult
- * @returns {Promise<void>}
+ * @returns {Promise<string>}
  */
 const sendGameResult = async (gameResult) => {
     console.log(`sendGameResult ${dayjs().format("DD.MM.YYYY hh:mm:ss")}`);
     const leaderboard = JSON.parse(window.localStorage.getItem(LEADERBOARD_LS_KEY));
     const updatedBoard = updateLeaderboard(leaderboard, gameResult);
     window.localStorage.setItem(LEADERBOARD_LS_KEY, JSON.stringify(updatedBoard));
+    return "success";
 };
 
 /**
