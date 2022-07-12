@@ -1,14 +1,14 @@
 .btn-default {
     @include font-default(400, 15px, normal, black);
     padding: 5px;
-    background-color: #fadb36;
+    background-color: #FADB36;
     border: 5px solid black;
     text-align: center;
 
     border-radius: 17px;
     &:hover {
         transition: 0.2s;
-        background-color: #ef9b10;
+        background-color: #EF9B10;
     }
 
     &:active {

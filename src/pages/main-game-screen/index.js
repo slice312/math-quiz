@@ -1,3 +1,4 @@
+import {GameMode} from "/src/shared/constants";
 import {gameSessionModel} from "/src/entities/game-session";
 import {Utils} from "/src/shared/lib/uitls";
 import {Timer} from "/src/shared/lib/timer";
@@ -30,14 +31,27 @@ const renderStaticElements = () => {
 
     const btnStopGame = document.getElementById("game-screen-btn-stop");
     btnStopGame.onclick = () => {
-        _timer.stop();
+        if (_timer) {
+            _timer.onComplete = null;
+            _timer.stop();
+        }
+        stopGame();
     };
+
+    const timerElement = document.getElementById("game-screen-timer");
+    if (gameSessionModel.state.gameMode === GameMode.Practice)
+        timerElement.style.display = "none";
+    else
+        timerElement.style.display = "block";
 };
 
 /**
  * @returns {Timer}
  */
 const getTimer = () => {
+    if (gameSessionModel.state.gameMode === GameMode.Practice)
+        return null;
+
     const timerLabel = document.getElementById("game-screen-timer-label");
     const circle = document.getElementById("game-screen-timer-circle");
     const perimeter = circle.getAttribute("r") * 2 * Math.PI;
@@ -67,7 +81,7 @@ const getTimer = () => {
 
 const startGame = () => {
     resetState();
-    _timer.start(15);
+    _timer?.start(13);
 
     let expr = nextExpression();
     _expressionForm.onsubmit = (e) => {
@@ -87,7 +101,7 @@ const startGame = () => {
 
 const stopGame = () => {
     ModalResult.open(() => startGame());
-    saveGameResults();
+    void saveGameResults();
 };
 
 const resetState = () => {

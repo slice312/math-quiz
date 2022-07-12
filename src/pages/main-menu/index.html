@@ -8,20 +8,20 @@
                 </label>
                 <input id="main-menu-input-name" name="name" type="text" placeholder="name" required>
             </div>
-            <fieldset class="main-menu__game-mode">
+            <fieldset class="radio-buttons main-menu__game-mode">
                 <legend>
                     Choose your game mode:
                 </legend>
                 <div class="main-menu__game-mode-radio">
-                    <label>
+                    <input class="radio-buttons__input" id="main-menu-game-mode-practice" type="radio" name="gameMode" value="practice">
+                    <label class="radio-buttons__label" for="main-menu-game-mode-practice">
                         Practice
-                        <input type="radio" name="gameMode" value="practice">
                     </label>
                 </div>
-                <div>
-                    <label>
+                <div  class="main-menu__game-mode-radio">
+                    <input class="radio-buttons__input" id="main-menu-game-mode-time-attack" type="radio" name="gameMode" value="timeAttack" checked>
+                    <label class="radio-buttons__label" for="main-menu-game-mode-time-attack">
                         Time Attack
-                        <input type="radio" name="gameMode" value="timeAttack" checked>
                     </label>
                 </div>
             </fieldset>
