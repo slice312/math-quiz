@@ -96,13 +96,13 @@ const devConfig = {
         watchFiles: [
             "./src/index.html",
             "./src/templates/*.html"
-        ],
+        ]
     },
     plugins: [
         new dotenvPlugin({
             path: ".envDev"
         })
-    ],
+    ]
 };
 
 

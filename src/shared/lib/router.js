@@ -42,7 +42,7 @@ export class Router {
             .then(response => response.text());
 
         const pageTemplateElement = DomLoader.renderElement(html);
-        DomLoader.setElement(pageTemplateElement.body.firstChild)
+        DomLoader.setElement(pageTemplateElement.body.firstChild);
 
         if (route.render)
             route.render();

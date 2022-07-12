@@ -8,7 +8,7 @@ export class Timer {
     /** @type {number} */
     #remainingSeconds;
     /** @type {number} */
-    #intervalCallbackId
+    #intervalCallbackId;
 
 
     set onTick(callback) {

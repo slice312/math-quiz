@@ -14,7 +14,7 @@ const render = () => {
     btnAboutModalClose.onclick = () => {
         modalAbout.remove();
     };
-}
+};
 
 
 export const ModalAbout = {

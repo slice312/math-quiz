@@ -35,4 +35,4 @@ export const Utils = {
         random
     },
     getLeaderboard
-}
+};

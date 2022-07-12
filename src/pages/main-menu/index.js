@@ -1,6 +1,6 @@
 import {PLAYER_LS_KEY} from "/src/shared/constants";
 import {gameSessionModel} from "/src/entities/game-session";
-import {AppRouter} from "/src/pages/app-router";
+import {AppRouter} from "/src/features/app-router";
 import {ModalAbout} from "/src/features/modal-about";
 
 

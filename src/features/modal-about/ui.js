@@ -5,7 +5,7 @@ export const layout = () => {
                 <div class="modal-about__container animate animate__zoomIn" id="modal-about-container">
                     <form class="modal-about__content">
                         <button class="btn-default modal-about__btn-close" id="modal-order-close-btn" type="button">
-                            <img src="/src/assets/icons/x-mark.svg" alt="x-mark">
+                            <img src="./src/assets/icons/x-mark.svg" alt="x-mark">
                         </button>
                         <h2 class="modal-about__title">
                             About

@@ -31,12 +31,14 @@ const onModeChanged = () => {
     const selectedMode = selected.value;
     const leaderboard = getLeaderBoard(selectedMode);
     renderTable(leaderboard);
-}
+};
 
-
+/**
+ * @param {GameMode} selectedMode
+ */
 const getLeaderBoard = (selectedMode) => {
-    return Utils.getLeaderboard()
-        ?.filter(x => x.mode === selectedMode) ?? [];
+    return Utils.getLeaderboard()?.filter(x => x.mode === selectedMode)
+        ?? [];
 };
 
 
@@ -67,11 +69,11 @@ const renderTable = (leaderboard) => {
         row.appendChild(colName);
 
         const colLevel = document.createElement("span");
-        colLevel.textContent = rec.level;
+        colLevel.textContent = String(rec.level);
         row.appendChild(colLevel);
 
         const colScore = document.createElement("span");
-        colScore.textContent = rec.score;
+        colScore.textContent = String(rec.score);
         row.appendChild(colScore);
     }
 };

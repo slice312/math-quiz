@@ -1,6 +1,5 @@
 import {gameSessionModel} from "/src/entities/game-session";
-import {GameMode} from "/src/shared/constants";
-import {LEADERBOARD_LS_KEY} from "/src/shared/constants";
+import {GameMode, LEADERBOARD_LS_KEY} from "/src/shared/constants";
 
 
 export const setMockerFunction = () => {
@@ -53,13 +52,43 @@ const leaderboard = [
         name: "Hurma",
         mode: GameMode.TimeAttack,
         level: 1,
-        score: 4,
+        score: 4
     },
     {
-        name: "Slice",
+        name: "DeRosa",
         mode: GameMode.TimeAttack,
         level: 2,
-        score: 7
+        score: 55
+    },
+    {
+        name: "Colnago",
+        mode: GameMode.TimeAttack,
+        level: 2,
+        score: 74
+    },
+    {
+        name: "Orbea",
+        mode: GameMode.TimeAttack,
+        level: 2,
+        score: 43
+    },
+    {
+        name: "Cute",
+        mode: GameMode.TimeAttack,
+        level: 2,
+        score: 76
+    },
+    {
+        name: "Slice Mem",
+        mode: GameMode.TimeAttack,
+        level: 2,
+        score: 21
+    },
+    {
+        name: "SliceHo",
+        mode: GameMode.TimeAttack,
+        level: 2,
+        score: 44
     },
     {
         name: "Kern",
@@ -108,5 +137,5 @@ const leaderboard = [
         mode: GameMode.Practice,
         level: 1,
         score: 4
-    },
+    }
 ];

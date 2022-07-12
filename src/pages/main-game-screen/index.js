@@ -200,6 +200,7 @@ const saveGameResults = async () => {
         name: gameSessionModel.state.playerName,
         mode: gameSessionModel.state.gameMode,
         level: gameSessionModel.state.level,
-        score: gameSessionModel.state.score,
+        score: gameSessionModel.state.score
     });
+    console.log(response);
 };
