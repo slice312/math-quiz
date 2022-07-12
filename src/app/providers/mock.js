@@ -68,7 +68,43 @@ const leaderboard = [
         score: 12
     },
     {
-        name: "Aterm",
+        name: "Aterm7",
+        mode: GameMode.Practice,
+        level: 1,
+        score: 4
+    },
+    {
+        name: "Aterm5",
+        mode: GameMode.Practice,
+        level: 1,
+        score: 4
+    },
+    {
+        name: "Aterm23",
+        mode: GameMode.Practice,
+        level: 1,
+        score: 4
+    },
+    {
+        name: "Aterm24",
+        mode: GameMode.Practice,
+        level: 1,
+        score: 4
+    },
+    {
+        name: "Aterm25",
+        mode: GameMode.Practice,
+        level: 1,
+        score: 4
+    },
+    {
+        name: "Aterm31",
+        mode: GameMode.Practice,
+        level: 1,
+        score: 4
+    },
+    {
+        name: "Aterm35",
         mode: GameMode.Practice,
         level: 1,
         score: 4
