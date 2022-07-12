@@ -38,6 +38,13 @@ const renderStaticElements = () => {
         stopGame();
     };
 
+    renderTimer();
+
+    const resultInput = document.getElementById("game-screen-result-input");
+    resultInput.focus();
+};
+
+const renderTimer = () => {
     const timerElement = document.getElementById("game-screen-timer");
     if (gameSessionModel.state.gameMode === GameMode.Practice)
         timerElement.style.display = "none";

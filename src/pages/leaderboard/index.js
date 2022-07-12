@@ -3,18 +3,23 @@ import {Utils} from "/src/shared/lib/uitls";
 
 
 export const renderLeaderboardScreen = () => {
-    console.log("renderLeaderboardScreen");
-
+    hidePlayButton();
     const selector = document.getElementById("leaderboard-mode-selector");
-
 
     const option = Array.from(selector.options)
         .find(x => x.value === gameSessionModel.state.gameMode);
-
     option.selected = true;
 
     selector.onchange = onModeChanged;
     onModeChanged();
+};
+
+const hidePlayButton = () => {
+    const url = new URL(window.location);
+    if (!url.searchParams.get("fromGame")) {
+        const btn = document.getElementById("leaderboard-btn-play");
+        btn.style.display = "none";
+    }
 };
 
 
@@ -31,7 +36,7 @@ const onModeChanged = () => {
 
 const getLeaderBoard = (selectedMode) => {
     return Utils.getLeaderboard()
-        .filter(x => x.mode === selectedMode);
+        ?.filter(x => x.mode === selectedMode) ?? [];
 };
 
 

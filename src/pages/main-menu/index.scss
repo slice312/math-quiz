@@ -49,17 +49,25 @@
     }
 
     &__game-mode {
+        margin-top: 5px;
         font-size: 25px;
-        width: 60%;
+        width: 70%;
         display: flex;
         flex-direction: column;
     }
 
     &__game-mode-radio {
+        width: 100%;
+        margin-top: 10px;
+    }
 
+    &__game-mode-label {
+        --color-text: black;
+        --color-border: black
     }
 
     &__button-list {
+        margin-top: 10px;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -71,6 +79,7 @@
 
     &__button-item {
         width: 100%;
+
         button, app-link {
             width: 100%;
             height: 49px;

@@ -74,6 +74,9 @@
         justify-content: space-between;
 
         span {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
             width: 30%;
             text-align: center;
         }

@@ -13,8 +13,12 @@ export class MathExGenerator {
         const num1 = Utils.Number.random(1, 10);
         const num2 = Utils.Number.random(1, 10);
         const operator = MathExGenerator.#operators[Utils.Number.random(0, 3)];
-        const result = this.getResult(num1, num2, operator);
+        if (operator === "/") {
+            const multiply = num1 * num2;
+            return {num1: multiply, num2, operator, result: num1};
+        }
 
+        const result = this.getResult(num1, num2, operator);
         return {num1, num2, operator, result};
     }
 
