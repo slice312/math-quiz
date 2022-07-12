@@ -1,4 +1,4 @@
-import {Router} from "/src/shared/routing/router";
+import {Router} from "/src/shared/lib/router";
 import {renderMainMenu} from "/src/pages/main-menu"
 import {renderMainGameScreen} from "/src/pages/main-game-screen";
 import {renderAboutPage} from "/src/pages/about";
@@ -39,7 +39,6 @@ const urlRoutes = {
         description: ""
     }
 };
-
 
 
 export const AppRouter = new Router(urlRoutes);

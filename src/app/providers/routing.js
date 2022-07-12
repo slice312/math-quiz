@@ -1,4 +1,4 @@
-import {AppRouter} from "./app-router";
+import {AppRouter} from "/src/pages/app-router";
 import {AppLink} from "./app-link-tag";
 
 

@@ -1,4 +1,4 @@
-import {AppRouter} from "/src/shared/routing/app-router";
+import {AppRouter} from "/src/pages/app-router";
 
 
 export class AppLink extends HTMLElement {

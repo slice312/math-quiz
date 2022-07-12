@@ -1,5 +1,5 @@
 import "./styles/index.scss";
-import {configureRouting} from "../shared/routing";
+import {configureRouting} from "./providers/routing";
 
 
 export const app = () => {

@@ -7,7 +7,6 @@
  */
 
 
-// TODO: разбить всю папку routing на shared/lib и app/config
 export class Router {
     #urlRoutes;
 
