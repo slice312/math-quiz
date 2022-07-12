@@ -5,3 +5,4 @@ export const GameMode = Object.freeze({
 
 
 export const LEADERBOARD_LS_KEY = "leaderboard";
+export const PLAYER_LS_KEY = "player";

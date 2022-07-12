@@ -36,8 +36,11 @@
         text-align: left;
         width: 180px;
         @include font-default(400, 20px, normal, black);
-    }
 
+        option {
+            font-size: 20px;
+        }
+    }
 
     &__table {
         margin-top: 25px;
@@ -48,7 +51,6 @@
             text-align: center;
         }
     }
-
 
     &__table-content {
         height: 43vh;
@@ -79,8 +81,8 @@
 
     hr {
         border: 0;
-        clear:both;
-        display:block;
+        clear: both;
+        display: block;
         width: 96%;
         background-color: black;
         height: 1px;
@@ -100,6 +102,36 @@
             width: 150px;
             height: 49px;
             font-size: 20px;
+        }
+    }
+}
+
+
+@media (max-width: 400px) {
+    .leaderboard {
+        &__title {
+            font-size: 40px;
+        }
+
+        &__mode-selector {
+            width: 135px;
+            font-size: 18px;
+
+            option {
+                font-size: 14px;
+            }
+        }
+
+        &__buttons {
+            width: 100%;
+            justify-content: space-between;
+            padding: 0 15px;
+            gap: 10px;
+
+            app-link {
+                height: 49px;
+                font-size: 20px;
+            }
         }
     }
 }

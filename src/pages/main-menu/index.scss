@@ -15,7 +15,7 @@
 
     &__form {
         width: 500px;
-        height: 70vh;
+        height: 80vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -78,6 +78,16 @@
             justify-content: center;
             align-items: center;
             font-size: 30px;
+        }
+    }
+}
+
+
+@media (max-width: 550px) {
+    .main-menu {
+        &__form {
+            height: 90vh;
+            max-width: 400px;
         }
     }
 }
