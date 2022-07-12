@@ -23,3 +23,9 @@ npm start
 This script run `webpack-dev-server` and auto open browser with `https://localhost:5007`.  
 If no browser is opened, you must manually open this URL in the browser.  
 Port `5007` specified in `webpack.config.json` in devConfig.
+
+## For test
+You can fill leaderboard with mock data, just open browser console and type:
+```js
+window.App.mockFillLeaderBoard();
+```
