@@ -23,7 +23,7 @@
     &__label {
         padding: 7px 10px;
         border-radius: 4px;
-        border: 2px solid black;
+        border: 3px solid black;
         font-size: 25px;
         line-height: 20px;
 
@@ -62,18 +62,16 @@
         }
     }
 
-
     &__expr-form {
         width: 100%;
         overflow: hidden;
         padding: 20px 20px;
         background-color: white;
-        font-size: 90px;
+        font-size: 80px;
         color: black;
 
         border: 3px solid #333333;
         border-radius: 15px;
-
     }
 
     &__expr-wrap {
@@ -84,11 +82,12 @@
     }
 
     &__expr-result {
+        width: 230px;
+        text-align: center;
         font-size: 80px;
         color: black;
-        width: 180px;
-        border: 2px solid black;
-        text-align: center;
+        border: 3px solid black;
+        border-radius: 5px;
     }
 
     input[type=number]::-webkit-inner-spin-button {
@@ -121,7 +120,7 @@
         }
 
         #game-screen-score-label-minus {
-            color: #F51317;
+            color: $color-danger;
         }
 
         @keyframes liftUp {
@@ -139,9 +138,68 @@
 
     &__btn-stop {
         margin-top: 50px;
-        background-color: #F51317;
+        background-color: $color-danger;
         font-size: 30px;
         line-height: 30px;
         width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .game-screen {
+        &__score {
+            margin-top: 60px;
+        }
+
+        &__container {
+            height: 100%;
+            justify-content: space-between;
+        }
+    }
+}
+
+
+@media (max-width: 576px) {
+    .game-screen {
+        &__expr-form {
+            font-size: 60px;
+        }
+
+        &__expr-result {
+            font-size: 50px;
+            width: 150px;
+        }
+
+        &__btn-stop {
+            margin-top: 20px;
+        }
+    }
+}
+
+
+@media (max-width: 380px) {
+    .game-screen {
+        &__head {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        &__expr-form {
+            font-size: 40px;
+        }
+
+        &__expr-result {
+            font-size: 40px;
+            width: 100px;
+        }
+
+        &__score-label {
+            font-size: 40px ;
+        }
+
+        &__btn-stop {
+            margin-top: 20px;
+        }
     }
 }

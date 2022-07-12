@@ -10,7 +10,7 @@
     background: rgba(0, 0, 0, 0.5);
 
     &__wrapper {
-        width: 500px;
+        max-width: 500px;
         min-height: 100%;
         margin: 0 auto;
         display: flex;
@@ -56,6 +56,9 @@
 
     &__correct-count {
         margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
         font-size: 25px;
     }
 
@@ -76,6 +79,23 @@
         button, app-link {
             width: 180px;
             font-size: 25px;
+        }
+    }
+}
+
+
+@media (max-width: 420px) {
+    .modal-game-result {
+        &__correct-count {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        &__buttons {
+            div:nth-child(1) {
+                flex-direction: column;
+            }
         }
     }
 }

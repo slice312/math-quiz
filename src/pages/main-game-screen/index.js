@@ -81,7 +81,7 @@ const getTimer = () => {
 
 const startGame = () => {
     resetState();
-    _timer?.start(13);
+    _timer?.start(90);
 
     let expr = nextExpression();
     _expressionForm.onsubmit = (e) => {
