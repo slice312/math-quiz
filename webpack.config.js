@@ -40,8 +40,7 @@ const commonConfig = {
             {
                 test: /\.(sass|scss|css)$/i,
                 use: [
-                    MiniCssExtractPlugin.loader, // TODO: вернуть этот лоадер и убрать style-loader в итоговом билде
-                    // "style-loader",
+                    MiniCssExtractPlugin.loader,
                     "css-loader",
                     {
                         loader: "postcss-loader",

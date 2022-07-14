@@ -8,8 +8,9 @@
 - The structure of the application was developed by [Feature-Sliced Design methodology](https://feature-sliced.design/en/)
 
 ## Features
-- SPA, routing, components with common js
-- Some css animations
+- SPA, routing, components approach with common js
+- ES6 modules, ES2022 classes
+- Some CSS animations
 - Feature-Sliced Design
 - Custom webpack setup
 - ESLint
