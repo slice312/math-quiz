@@ -5,7 +5,7 @@
 
 ## About
 - A study project to learn how to build single page applications, spa routing, components approach without frameworks using common js.
-- The structure of the application was developed by [Feature-Sliced Design methodology](https://feature-sliced.design/en/)
+- The structure of the application was developed by [Feature-Sliced Design methodology](https://feature-sliced.design)
 
 ## Features
 - SPA, routing, components approach with common js
