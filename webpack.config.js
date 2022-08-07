@@ -1,6 +1,6 @@
 const path = require("path");
 const {merge} = require("webpack-merge");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const dotenvPlugin = require("dotenv-webpack");
@@ -14,7 +14,7 @@ const commonConfig = {
         clean: true
     },
     plugins: [
-        new HtmlWebpackPlugin({
+        new HtmlPlugin({
             template: "./src/index.html",
             inject: "body"
         }),

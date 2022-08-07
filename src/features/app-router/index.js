@@ -9,7 +9,7 @@ const urlRoutes = {
     // TODO: [How to emulate `history fallback` for SPA on Github Pages](https://stackoverflow.com/questions/36296012/is-there-a-configuration-in-github-pages-that-allows-you-to-redirect-everything)
     /* eslint-enable */
     "404": {
-        template: "./src/templates/404.html", // TODO: invalid
+        template: "./src/templates/404.html",
         render: null,
         title: "",
         description: ""
