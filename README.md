@@ -1,6 +1,6 @@
 <h1 align="center">Math Quiz game</h1>
 <h3 align="center">
-    <a href="https://slice312.github.io/zeon-module-2_MathQuiz/">Visit the live app</a>
+    <a href="https://slice312.github.io/math-quiz/">Visit the live app</a>
 </h3>
 
 ## About
