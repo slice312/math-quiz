@@ -50,8 +50,8 @@ export class Router {
 
     /**
      * Получение текущего path, с учетом того что в проде среды добавляют вначало path'ы,
-     * например для https://slice312.github.io/zeon-module-2_MathQuiz/
-     * "zeon-module-2_MathQuiz" выносится в переменную среды {@link process.env.PUBLIC_URL}
+     * например для https://slice312.github.io/math-quiz/
+     * "math-quiz" выносится в переменную среды {@link process.env.PUBLIC_URL}
      * @returns {string}
      */
     getCurrentUrlPath() {
