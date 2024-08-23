@@ -5,7 +5,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const dotenvPlugin = require("dotenv-webpack");
 
-
 const commonConfig = {
     entry: "./src/index.js",
     output: {
